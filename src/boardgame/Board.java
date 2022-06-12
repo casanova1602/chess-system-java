@@ -53,6 +53,9 @@ public class Board {
 	}
 	
 	public boolean thereIsAPiece(Position position) {
+		if(!positionExists(position)) {
+			throw new BoardException("Position Not on the board");
+		}
 		return piece(position) != null;
 	}
 }
